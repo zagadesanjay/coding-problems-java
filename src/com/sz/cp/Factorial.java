@@ -7,8 +7,17 @@ public class Factorial {
 		// factorial of 0 and 1 is 1
 		
 		System.out.println(factorial(13));
+		
+		
+		sum(5);
 	}
 	
+	
+	private static void sum(int n) {
+		int sum = (n+1)*(n+2)/2;
+		
+		System.out.println(sum);
+	}
 	
 	private static int factorial(int n) {
 		

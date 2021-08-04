@@ -1,9 +1,12 @@
 package com.sz.cp;
 
-public class Main2 {
+public class SearchSuggestionsMain {
 
 	public static void main(String[] args) {
 
+		
+		
+		
 	}
 
 }
