@@ -1,6 +1,5 @@
 package com.sz.strings;
 
-
 import java.util.*;
 
 public class FirstNonRepeatingChar {
@@ -8,7 +7,7 @@ public class FirstNonRepeatingChar {
 	public static void main(String[] args) {
 
 		String str = "abcbba";
-		System.out.println(findNonRepeatingChar(str));
+		System.out.println(findNonRepeatingChar3(str));
 	}
 
 	/*
@@ -32,10 +31,9 @@ public class FirstNonRepeatingChar {
 		return '_';
 	}
 
-	
 	/*
-	 * O(2N) => O(N)
-	 * HashMap doesnt maintain insertion order so need to iterate all characters and find first char whose count is 1 in map 
+	 * O(2N) => O(N) HashMap doesnt maintain insertion order so need to iterate all
+	 * characters and find first char whose count is 1 in map
 	 */
 	public static char findNonRepeatingChar2(String str) {
 		HashMap<Character, Integer> chars_count = new HashMap<>();
@@ -55,7 +53,26 @@ public class FirstNonRepeatingChar {
 				return c;
 			}
 		}
-		
+
+		return '_';
+
+	}
+
+	/*
+	 * 
+	 */
+	public static char findNonRepeatingChar3(String str) {
+
+		int count[] = new int[26];
+
+		for (char c : str.toCharArray())
+			count[c - 'a']++;
+
+		for (char c : str.toCharArray()) {
+			if (count[c - 'a'] == 1)
+				return c;
+		}
+
 		return '_';
 
 	}
